@@ -1,0 +1,138 @@
+/* Globale Zurücksetzungen */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+/* 1. Fortschrittsbalken */
+#progress-bar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background-color: #ddd;
+    z-index: 1000;
+    /* Stellt sicher, dass er über allem liegt */
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0%;
+    /* Wird durch JS dynamisch gesetzt */
+    background-color: #007bff;
+    transition: background-color 0.3s ease;
+    /* Sanfter Farbwechsel */
+}
+
+/* 2. "Zurück nach oben"-Button */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    opacity: 0;
+    /* Standardmäßig unsichtbar */
+    visibility: hidden;
+    /* Standardmäßig unsichtbar */
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 999;
+}
+
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 3. Navigation */
+#main-nav {
+    position: sticky;
+    top: 6px;
+    /* Unterhalb des Progress Bars */
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    z-index: 900;
+}
+
+#main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+#main-nav li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+
+#main-nav li a:hover {
+    background-color: #555;
+}
+
+/* 4. Story Sektionen und der Sichtbarkeits-Trigger Hook */
+.story-section {
+    min-height: 80vh;
+    /* Macht Sektionen scrollbar */
+    padding: 50px 10%;
+    text-align: center;
+    transition: background-color 0.5s ease;
+    /* CSS Hook für JS-gesteuerte Animation */
+    opacity: 0.1;
+    /* Standardmäßig leicht transparent */
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.story-section.is-visible {
+    opacity: 1;
+    /* Sichtbar, wenn JS die Klasse hinzufügt */
+    transform: translateY(0);
+}
+
+.full-height {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+/* 5. Modales Fenster */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    /* Wird durch JS auf 'flex' gesetzt, wenn es angezeigt werden soll */
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}

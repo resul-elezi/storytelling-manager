@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Window Objekt Storytelling Manager</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="progress-bar-container">
+      <div id="progress-bar"></div>
+    </div>
+
+    <button id="back-to-top" aria-label="Zurück zum Seitenanfang">↑</button>
+
+    <nav id="main-nav">
+      <ul>
+        <li><a href="#intro" class="nav-link">Start</a></li>
+        <li><a href="#section-story-1" class="nav-link">Kapitel 1</a></li>
+        <li><a href="#section-story-2" class="nav-link">Kapitel 2</a></li>
+        <li><a href="#section-story-3" class="nav-link">Kapitel 3</a></li>
+        <li><a href="#section-contact" class="nav-link">Kontakt</a></li>
+      </ul>
+    </nav>
+
+    <section id="intro" class="story-section full-height active-section">
+      <h1>Immersiver Storytelling Manager</h1>
+      <p>Ein tiefer Einblick in das Window Objekt.</p>
+      <p>Scrollen Sie nach unten, um zu beginnen.</p>
+    </section>
+
+    <section
+      id="section-story-1"
+      class="story-section chapter"
+      data-chapter="1"
+    >
+      <h2>Kapitel 1: Die Initialisierung</h2>
+      <p>
+        Hier wird das Window-Objekt auf seine Größe (innerWidth, innerHeight)
+        geprüft.
+      </p>
+      <div style="height: 100vh; background-color: #e0f7fa">Platzhalter</div>
+    </section>
+
+    <section
+      id="section-story-2"
+      class="story-section chapter"
+      data-chapter="2"
+    >
+      <h2>Kapitel 2: Die dynamische Anpassung</h2>
+      <p>Hier greifen die resize, scroll und history Events.</p>
+      <div style="height: 50vh; background-color: #fce4ec">Platzhalter</div>
+    </section>
+
+    <section
+      id="section-story-3"
+      class="story-section chapter"
+      data-chapter="3"
+    >
+      <h2>Kapitel 3: Timing und Optimierung</h2>
+      <p>Hier kommen setTimeout und Debouncing/Throttling ins Spiel.</p>
+      <div style="height: 120vh; background-color: #fff3e0">Platzhalter</div>
+    </section>
+
+    <section
+      id="section-contact"
+      class="story-section chapter"
+      data-chapter="contact"
+    >
+      <h2>Kontakt und Abschluss</h2>
+      <p>
+        Wir sind am Ende der Seite. Nutzen Sie den "Zurück nach oben"-Button!
+      </p>
+    </section>
+
+    <div id="timeout-modal" class="modal">
+      <div class="modal-content">
+        <h3>Sind Sie noch da?</h3>
+        <p>Zur Sicherheit schließen wir dieses Fenster in Kürze...</p>
+        <button id="modal-close-btn">Weiterlesen</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
